@@ -16,10 +16,9 @@ It supports full CRUD operations:
 
 ## 🚀 Base URL
 
+```
 http://localhost:3000
-
-yaml
-Copy code
+```
 
 ---
 
@@ -43,10 +42,9 @@ Each user contains the following fields:
 **Endpoint:** `/user`
 
 ### Example URL
+```
 http://localhost:3000/user
-
-bash
-Copy code
+```
 
 ### ✅ Success Response (200 OK)
 
@@ -60,17 +58,23 @@ Copy code
     "name": "jilan"
   }
 ]
-🔹 2. Get User By UID
-Method: GET
-Endpoint: /user/:uid
+```
 
-Example
-bash
-Copy code
+---
+
+## 🔹 2. Get User By UID
+
+**Method:** `GET`  
+**Endpoint:** `/user/:uid`
+
+### Example
+```
 http://localhost:3000/user/108623
-✅ Success Response (200 OK)
-json
-Copy code
+```
+
+### ✅ Success Response (200 OK)
+
+```json
 {
   "att": 80,
   "uid": 108623,
@@ -78,23 +82,31 @@ Copy code
   "bonus": 20,
   "name": "jilan"
 }
-❌ Error Response (404 Not Found)
-json
-Copy code
+```
+
+### ❌ Error Response (404 Not Found)
+
+```json
 {
   "message": "User not found"
 }
-🔹 3. Create New User
-Method: POST
-Endpoint: /user
+```
 
-Example URL
-bash
-Copy code
+---
+
+## 🔹 3. Create New User
+
+**Method:** `POST`  
+**Endpoint:** `/user`
+
+### Example URL
+```
 http://localhost:3000/user
-📥 Request Body (JSON)
-json
-Copy code
+```
+
+### 📥 Request Body (JSON)
+
+```json
 {
   "att": 75,
   "uid": 109000,
@@ -102,9 +114,11 @@ Copy code
   "bonus": 15,
   "name": "rahul"
 }
-✅ Success Response (201 Created)
-json
-Copy code
+```
+
+### ✅ Success Response (201 Created)
+
+```json
 {
   "message": "User created",
   "user": {
@@ -115,26 +129,34 @@ Copy code
     "name": "rahul"
   }
 }
-🔹 4. Update User (Full Replace)
-Method: PUT
-Endpoint: /user/:uid
+```
 
-Example
-bash
-Copy code
+---
+
+## 🔹 4. Update User (Full Replace)
+
+**Method:** `PUT`  
+**Endpoint:** `/user/:uid`
+
+### Example
+```
 http://localhost:3000/user/108623
-📥 Request Body (All fields required)
-json
-Copy code
+```
+
+### 📥 Request Body (All fields required)
+
+```json
 {
   "att": 90,
   "totalsub": 20,
   "bonus": 50,
   "name": "jilan updated"
 }
-✅ Success Response (200 OK)
-json
-Copy code
+```
+
+### ✅ Success Response (200 OK)
+
+```json
 {
   "message": "User replaced",
   "user": {
@@ -145,29 +167,39 @@ Copy code
     "name": "jilan updated"
   }
 }
-❌ Error Response (404 Not Found)
-json
-Copy code
+```
+
+### ❌ Error Response (404 Not Found)
+
+```json
 {
   "message": "User not found"
 }
-🔹 5. Update User (Partial Update)
-Method: PATCH
-Endpoint: /user/:uid
+```
 
-Example
-bash
-Copy code
+---
+
+## 🔹 5. Update User (Partial Update)
+
+**Method:** `PATCH`  
+**Endpoint:** `/user/:uid`
+
+### Example
+```
 http://localhost:3000/user/108623
-📥 Request Body (Only fields to update)
-json
-Copy code
+```
+
+### 📥 Request Body (Only fields to update)
+
+```json
 {
   "bonus": 99
 }
-✅ Success Response (200 OK)
-json
-Copy code
+```
+
+### ✅ Success Response (200 OK)
+
+```json
 {
   "message": "User partially updated",
   "user": {
@@ -178,23 +210,31 @@ Copy code
     "name": "jilan"
   }
 }
-❌ Error Response (404 Not Found)
-json
-Copy code
+```
+
+### ❌ Error Response (404 Not Found)
+
+```json
 {
   "message": "User not found"
 }
-🔹 6. Delete User
-Method: DELETE
-Endpoint: /user/:uid
+```
 
-Example
-bash
-Copy code
+---
+
+## 🔹 6. Delete User
+
+**Method:** `DELETE`  
+**Endpoint:** `/user/:uid`
+
+### Example
+```
 http://localhost:3000/user/108623
-✅ Success Response (200 OK)
-json
-Copy code
+```
+
+### ✅ Success Response (200 OK)
+
+```json
 {
   "message": "User deleted successfully",
   "user": {
@@ -205,39 +245,49 @@ Copy code
     "name": "jilan"
   }
 }
-❌ Error Response (404 Not Found)
-json
-Copy code
+```
+
+### ❌ Error Response (404 Not Found)
+
+```json
 {
   "message": "User not found"
 }
-🛠 How to Run the Project
-1️⃣ Install Dependencies
-nginx
-Copy code
+```
+
+---
+
+## 🛠 How to Run the Project
+
+### 1️⃣ Install Dependencies
+```
 npm install
-2️⃣ Start the Server
-nginx
-Copy code
+```
+
+### 2️⃣ Start the Server
+```
 node index.js
-3️⃣ Server will run at:
-arduino
-Copy code
+```
+
+### 3️⃣ Server runs at
+```
 http://localhost:3000
-📌 Technologies Used
-Node.js
+```
 
-Express.js
+---
 
-Postman (for API testing)
+## 📌 Technologies Used
 
-✅ Features
-RESTful API design
+- Node.js
+- Express.js
+- Postman (for API testing)
 
-Proper HTTP status codes
+---
 
-Error handling
+## ✅ Features
 
-JSON request & response
-
-Full CRUD operations
+- RESTful API design
+- Proper HTTP status codes
+- Error handling
+- JSON request & response
+- Full CRUD operations
