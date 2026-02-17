@@ -1,45 +1,56 @@
-📘 Users Server API Documentation
-📌 Project Overview
+# 📘 Users Server API Documentation
 
-This project is a simple User Management REST API built using Node.js and Express.js.
+## 📌 Project Overview
+
+This project is a simple **User Management REST API** built using **Node.js** and **Express.js**.  
 It supports full CRUD operations:
 
-Get all users
+- Get all users
+- Get user by UID
+- Create user
+- Update user (PUT)
+- Partial update user (PATCH)
+- Delete user
 
-Get user by UID
+---
 
-Create user
+## 🚀 Base URL
 
-Update user (PUT)
-
-Partial update user (PATCH)
-
-Delete user
-
-🚀 Base URL
 http://localhost:3000
 
-📂 User Object Structure
+yaml
+Copy code
+
+---
+
+## 📂 User Object Structure
 
 Each user contains the following fields:
 
-Field	Type	Description
-att	Number	Attendance
-uid	Number	Unique User ID
-totalsub	Number	Total Submissions
-bonus	Number	Bonus Points
-name	String	User Name
-🔹 1. Get All Users
-Method:
-GET
+| Field     | Type   | Description |
+|-----------|--------|-------------|
+| att       | Number | Attendance |
+| uid       | Number | Unique User ID |
+| totalsub  | Number | Total Submissions |
+| bonus     | Number | Bonus Points |
+| name      | String | User Name |
 
-Endpoint:
-/user
+---
 
-Example URL:
+## 🔹 1. Get All Users
+
+**Method:** `GET`  
+**Endpoint:** `/user`
+
+### Example URL
 http://localhost:3000/user
 
-Success Response (200 OK)
+bash
+Copy code
+
+### ✅ Success Response (200 OK)
+
+```json
 [
   {
     "att": 80,
@@ -49,18 +60,17 @@ Success Response (200 OK)
     "name": "jilan"
   }
 ]
-
 🔹 2. Get User By UID
-Method:
-GET
+Method: GET
+Endpoint: /user/:uid
 
-Endpoint:
-/user/:uid
-
-Example:
+Example
+bash
+Copy code
 http://localhost:3000/user/108623
-
-Success Response (200 OK)
+✅ Success Response (200 OK)
+json
+Copy code
 {
   "att": 80,
   "uid": 108623,
@@ -68,23 +78,23 @@ Success Response (200 OK)
   "bonus": 20,
   "name": "jilan"
 }
-
-Error Response (404 Not Found)
+❌ Error Response (404 Not Found)
+json
+Copy code
 {
   "message": "User not found"
 }
-
 🔹 3. Create New User
-Method:
-POST
+Method: POST
+Endpoint: /user
 
-Endpoint:
-/user
-
-Example URL:
+Example URL
+bash
+Copy code
 http://localhost:3000/user
-
-Request Body (JSON)
+📥 Request Body (JSON)
+json
+Copy code
 {
   "att": 75,
   "uid": 109000,
@@ -92,8 +102,9 @@ Request Body (JSON)
   "bonus": 15,
   "name": "rahul"
 }
-
-Success Response (201 Created)
+✅ Success Response (201 Created)
+json
+Copy code
 {
   "message": "User created",
   "user": {
@@ -104,26 +115,26 @@ Success Response (201 Created)
     "name": "rahul"
   }
 }
-
 🔹 4. Update User (Full Replace)
-Method:
-PUT
+Method: PUT
+Endpoint: /user/:uid
 
-Endpoint:
-/user/:uid
-
-Example:
+Example
+bash
+Copy code
 http://localhost:3000/user/108623
-
-Request Body (All fields required)
+📥 Request Body (All fields required)
+json
+Copy code
 {
   "att": 90,
   "totalsub": 20,
   "bonus": 50,
   "name": "jilan updated"
 }
-
-Success Response (200 OK)
+✅ Success Response (200 OK)
+json
+Copy code
 {
   "message": "User replaced",
   "user": {
@@ -134,28 +145,29 @@ Success Response (200 OK)
     "name": "jilan updated"
   }
 }
-
-Error Response (404 Not Found)
+❌ Error Response (404 Not Found)
+json
+Copy code
 {
   "message": "User not found"
 }
-
 🔹 5. Update User (Partial Update)
-Method:
-PATCH
+Method: PATCH
+Endpoint: /user/:uid
 
-Endpoint:
-/user/:uid
-
-Example:
+Example
+bash
+Copy code
 http://localhost:3000/user/108623
-
-Request Body (Only fields to update)
+📥 Request Body (Only fields to update)
+json
+Copy code
 {
   "bonus": 99
 }
-
-Success Response (200 OK)
+✅ Success Response (200 OK)
+json
+Copy code
 {
   "message": "User partially updated",
   "user": {
@@ -166,23 +178,23 @@ Success Response (200 OK)
     "name": "jilan"
   }
 }
-
-Error Response (404 Not Found)
+❌ Error Response (404 Not Found)
+json
+Copy code
 {
   "message": "User not found"
 }
-
 🔹 6. Delete User
-Method:
-DELETE
+Method: DELETE
+Endpoint: /user/:uid
 
-Endpoint:
-/user/:uid
-
-Example:
+Example
+bash
+Copy code
 http://localhost:3000/user/108623
-
-Success Response (200 OK)
+✅ Success Response (200 OK)
+json
+Copy code
 {
   "message": "User deleted successfully",
   "user": {
@@ -193,30 +205,26 @@ Success Response (200 OK)
     "name": "jilan"
   }
 }
-
-Error Response (404 Not Found)
+❌ Error Response (404 Not Found)
+json
+Copy code
 {
   "message": "User not found"
 }
-
 🛠 How to Run the Project
-
-Install dependencies:
-
+1️⃣ Install Dependencies
+nginx
+Copy code
 npm install
-
-
-Start the server:
-
+2️⃣ Start the Server
+nginx
+Copy code
 node index.js
-
-
-Server will run on:
-
+3️⃣ Server will run at:
+arduino
+Copy code
 http://localhost:3000
-
 📌 Technologies Used
-
 Node.js
 
 Express.js
@@ -224,7 +232,6 @@ Express.js
 Postman (for API testing)
 
 ✅ Features
-
 RESTful API design
 
 Proper HTTP status codes
