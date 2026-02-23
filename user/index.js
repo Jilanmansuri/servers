@@ -32,6 +32,7 @@ app.get("/user", (req, res) => {
 
 
 
+
 app.get("/user/:uid", (req, res) => {
     const userId = Number(req.params.uid);
     const user = users.find(u => u.uid === userId);
