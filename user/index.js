@@ -14,7 +14,7 @@ app.use(cors({
         "https://codinggita.com"
     ],
 
-    methods:["GET"]
+    // methods:["GET"]
 }));
 
 
