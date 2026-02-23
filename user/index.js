@@ -54,7 +54,7 @@ app.post("/user", (req, res) => {
     };
 
 
-    
+
     users.push(newUser);
 
     res.status(201).json({
@@ -74,6 +74,7 @@ app.put("/user/:uid", (req, res) => {
         return res.status(404).json({ message: "User not found" });
     }
 
+    
     users[index] = {
         att: req.body.att,
         uid: userId,   // important: same uid rakho
