@@ -23,6 +23,7 @@ app.get("/user", (req, res) => {
   res.status(200).json(users);
 });
 
+
 // app.get("/users/:test", (req, res) => {
 //   console.log(req.params);
 //   console.log("first code")
