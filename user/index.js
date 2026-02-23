@@ -68,7 +68,6 @@ app.post("/user", (req, res) => {
         name: req.body.name
     };
 
-
     users.push(newUser);
 
     res.status(201).json({
