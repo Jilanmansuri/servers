@@ -104,7 +104,6 @@ app.put("/user/:uid", (req, res) => {
 
 
 
-
 app.patch("/user/:uid", (req, res) => {
     const userId = Number(req.params.uid);
     const user = users.find(u => u.uid === userId);
