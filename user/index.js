@@ -67,7 +67,6 @@ app.post("/user", (req, res) => {
 
 
 
-
 app.put("/user/:uid", (req, res) => {
 
     const userId = Number(req.params.uid);
