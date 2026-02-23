@@ -19,8 +19,8 @@ app.get("/", (req, res) => {
 
 
 app.get("/user", (req, res) => {
-  console.log(users)
-  res.status(200).json(users);
+    console.log(users)
+    res.status(200).json(users);
 });
 
 
@@ -95,22 +95,22 @@ app.put("/user/:uid", (req, res) => {
 
 
 app.patch("/user/:uid", (req, res) => {
-  const userId = Number(req.params.uid);
-  const user = users.find(u => u.uid === userId);
+    const userId = Number(req.params.uid);
+    const user = users.find(u => u.uid === userId);
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
-  }
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
 
-  if (req.body.att !== undefined) user.att = req.body.att;
-  if (req.body.totalsub !== undefined) user.totalsub = req.body.totalsub;
-  if (req.body.bonus !== undefined) user.bonus = req.body.bonus;
-  if (req.body.name !== undefined) user.name = req.body.name;
+    if (req.body.att !== undefined) user.att = req.body.att;
+    if (req.body.totalsub !== undefined) user.totalsub = req.body.totalsub;
+    if (req.body.bonus !== undefined) user.bonus = req.body.bonus;
+    if (req.body.name !== undefined) user.name = req.body.name;
 
-  res.status(200).json({
-    message: "User partially updated",
-    user
-  });
+    res.status(200).json({
+        message: "User partially updated",
+        user
+    });
 });
 
 
@@ -118,19 +118,19 @@ app.patch("/user/:uid", (req, res) => {
 
 
 app.delete("/user/:uid", (req, res) => {
-  const userId = Number(req.params.uid);
-  const index = users.findIndex(u => u.uid === userId);
+    const userId = Number(req.params.uid);
+    const index = users.findIndex(u => u.uid === userId);
 
-  if (index === -1) {
-    return res.status(404).json({ message: "User not found" });
-  }
+    if (index === -1) {
+        return res.status(404).json({ message: "User not found" });
+    }
 
-  const deletedUser = users.splice(index, 1);
+    const deletedUser = users.splice(index, 1);
 
-  res.status(200).json({
-    message: "User deleted successfully",
-    user: deletedUser[0]
-  });
+    res.status(200).json({
+        message: "User deleted successfully",
+        user: deletedUser[0]
+    });
 });
 
 
@@ -161,3 +161,6 @@ app.delete("/user/:uid", (req, res) => {
 app.listen(3000, () => {
     console.log("Server started on port 3000");
 });
+
+
+
