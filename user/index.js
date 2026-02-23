@@ -6,6 +6,15 @@ app.use(express.json());
 app.use(cors());
 
 
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://codinggita.com"
+    ]
+}));
+
+
+
 const users = [
     { att: 80, uid: 108623, totalsub: 12, bonus: 20, name: "jilan" },
     { att: 100, uid: 108757, totalsub: 15, bonus: 30, name: "ammar" },
