@@ -65,7 +65,6 @@ app.post("/user", (req, res) => {
 
 
 
-
 app.put("/user/:uid", (req, res) => {
 
     const userId = Number(req.params.uid);
@@ -87,7 +86,6 @@ app.put("/user/:uid", (req, res) => {
         message: "User replaced",
         user: users[index]
     });
-
 });
 
 
@@ -116,7 +114,6 @@ app.patch("/user/:uid", (req, res) => {
 
 
 
-
 app.delete("/user/:uid", (req, res) => {
   const userId = Number(req.params.uid);
   const index = users.findIndex(u => u.uid === userId);
@@ -132,7 +129,6 @@ app.delete("/user/:uid", (req, res) => {
     user: deletedUser[0]
   });
 });
-
 
 
 
