@@ -21,7 +21,6 @@ mongoose.connect(
     .catch(err => console.error("Connection error:", err));
 
 
-    
 
 // Schemaa
 const userSchema = new mongoose.Schema({
