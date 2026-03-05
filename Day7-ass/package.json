@@ -1,5 +1,5 @@
 {
-  "name": "user",
+  "name": "day7-ass",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "nodemon": "^3.1.11"
+    "mongoose": "^9.2.4",
+    "nodemon": "^3.1.14"
   }
 }
