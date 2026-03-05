@@ -9,16 +9,16 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-// mongoose.connect("mongodb://localhost:27017/assignment")
-// .then(() => console.log("Connected to MongoDB"))
-// .catch(err => console.log("Could not connect", err));
+mongoose.connect("mongodb://localhost:27017/assignment")
+.then(() => console.log("Connected to MongoDB"))
+.catch(err => console.log("Could not connect", err));
 
 
-mongoose.connect(
-    "mongodb+srv://Jilan:12345@cluster0.wkqyfn1.mongodb.net/?appName=Cluster0"
-)
-    .then(() => console.log("Connected to MongoDB Atlas"))
-    .catch(err => console.error("Connection error:", err));
+// mongoose.connect(
+//     "mongodb+srv://Jilan:12345@cluster0.wkqyfn1.mongodb.net/?appName=Cluster0"
+// )
+//     .then(() => console.log("Connected to MongoDB Atlas"))
+//     .catch(err => console.error("Connection error:", err));
 
 
 
