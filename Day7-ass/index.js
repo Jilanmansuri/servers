@@ -14,6 +14,10 @@ app.use(cors());
 // .catch(err => console.log("Could not connect", err));
 
 
+
+// "mongodb+srv://Jilan:12345@cluster0.wkqyfn1.mongodb.net/assignment?retryWrites=true&w=majority"
+
+
 mongoose.connect(
     "mongodb+srv://Jilan:12345@cluster0.wkqyfn1.mongodb.net/?appName=Cluster0"
 )
