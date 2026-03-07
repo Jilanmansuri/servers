@@ -10,9 +10,11 @@ app.use(express.json());
 
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/Day7')
-    .then(() => console.log("Connected to MongoDB"))
-    .catch(err => console.error('Could not connect to MongoDB', err));
+mongoose.connect(
+    "mongodb+srv://Jilan:12345@cluster0.wkqyfn1.mongodb.net/?appName=Cluster0"
+)
+    .then(() => console.log("Connected to MongoDB Atlas"))
+    .catch(err => console.error("Connection error:", err));
 
 
 // User Schema
